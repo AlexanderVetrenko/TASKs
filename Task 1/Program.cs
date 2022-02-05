@@ -1,8 +1,8 @@
 ﻿//Вывести квадрат числа
-double result=-1;
+double a=-1;
 string s;
 
 System.Console.WriteLine("Введите число ");
 s = Console.ReadLine();
-result = Convert.ToDouble(s);
-System.Console.WriteLine($"{result*result,0:F2}");
+a = Convert.ToDouble(s);
+System.Console.WriteLine($"{a*a,0:F2}");
