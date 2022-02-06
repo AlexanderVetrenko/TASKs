@@ -2,6 +2,7 @@
 
 int a = 0;
 double n = 0, grade = 0;
+//char c='j';
 string s;
 
 System.Console.WriteLine("Введите число ");
@@ -12,7 +13,9 @@ while (a!=0) // будем выполнять программу до тех п�
 {
     grade = Math.Pow(a, 3);
     s = Convert.ToString(grade);
-    n = Convert.ToDouble(s.Length-1);                       
+    s = (s.Length-1);
+    System.Console.WriteLine(s);
+    n = Convert.ToDouble(s);                       
     if (n%2 == 0)
     {
         System.Console.WriteLine($"Куб числа "+ a +" равен " + grade);
