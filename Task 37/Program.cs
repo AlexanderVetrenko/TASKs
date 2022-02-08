@@ -4,11 +4,11 @@ int [] a = new int [123];
 int count = 0;
 
 for(int i = 0;i < a.Length; i++)
-    a[i]=new Random().Next(0,100);
+    a[i]=new Random().Next(0,1000);
 
-for (int i = 10; i < 100; i++)
+for (int i = 0;i < a.Length; i++)
 {
-    count++;
+    if (a[i]> 9 && a[i] < 100) count++;
 }
 
 System.Console.WriteLine("Количество элементов из отрезка [10,99] составляет " + count);
