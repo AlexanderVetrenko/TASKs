@@ -1,12 +1,11 @@
 ﻿// Показать четные числа от 1 до N
 
 int a = 0;
-string s = String.Empty;
 
 System.Console.WriteLine("Введите число ");
+string s = string.Empty;
 s = Console.ReadLine();
 a = Convert.ToInt32(s);
-//int [] arr = new int [a+1];
 
 for (int i = 1; i <= a; i++)
 {
