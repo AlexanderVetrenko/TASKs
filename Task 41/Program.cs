@@ -33,6 +33,19 @@ bool Solve(int a, int b, int c)
 }
 
 void Print(bool r)
+
+/* bool IsTreug(double x, double y, double z)
+{
+    return (x + y > z && x + z > y && y + z > x);
+}
+
+
+double a = 10, b = 4, c = 7;
+
+//if - оператор
+//(условие)?вернуть, если истина:вернуть, если ложно
+Console.WriteLine($"{a} {b} {c} - " + (IsTreug(a,b,c)?"Это стороны треугольника":"Это не стороны треугольника"));
+ */
 {
     if(r == true) System.Console.WriteLine("Введенные числа являются сторонами трегуольника");
     if(r == false) System.Console.WriteLine("Введенные числа НЕ являются сторонами трегуольника");
