@@ -14,15 +14,9 @@ void Input (out int n)
 }
 
 string Solve(int a)
-{
-    string res = string.Empty;
-    
-    while (a != 0)
-    {
-        res = res + a + " ";
-        a = a - 1;
-    }
-    return res;
+{   
+    if (a==1) return "1";
+    else return a + " " + Solve(a-1);
 }
 
 void PrintResult(int a, string d)
