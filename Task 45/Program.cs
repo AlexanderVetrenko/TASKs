@@ -1,6 +1,6 @@
 ﻿//Показать числа Фибоначчи
 
-int a = 0, b = 0, res = 0;
+int a = 0;
 string s = String.Empty;
 
 System.Console.WriteLine("Введите количество чисел Фибоначчи (не менее 2)");
