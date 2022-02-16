@@ -2,7 +2,7 @@
 
 int x = 0, y = 0;
 double a = 0;
-List<int> Numbrs = new List<int>();
+//string resul = string.Empty;
 //string r = string.Empty;
 
 Input(out x, out y);
@@ -13,8 +13,7 @@ PrintArray(matrix, x,y);
 System.Console.WriteLine("Введите число, позиции которого необходимо найти ");
 a = Convert.ToDouble(Console.ReadLine());
 
-FindElement(matrix, a, out Numbrs);
-PrintResults(Numbrs);
+PrintResults(FindElement(matrix, a));
 
 
 
@@ -57,30 +56,30 @@ void PrintArray (double[,] arr, int a, int b)
     }
 }
 
-void FindElement(double[,] arr, double b, out List<int> Indexes)
+string FindElement(double[,] arr, double b)
 {
-    //Indexes.Add(1);
+    string res = string.Empty;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
         {
-           // if (arr[i,j] == b)
-           // {
-               Indexes.Add(i);
-               Indexes.Add(j);
-           // }
+           if (arr[i,j] == b)
+           {
+               res = res + $"{i}" + $"{j}";
+           }
         }
     }
+    return res;
 }
 
-void PrintResults(List<int> Indexes)
+void PrintResults(string res)
 {
-    if(Indexes.Count == 1) System.Console.WriteLine("Такого элемента в массиве не обнаружено");
+    if(res == string.Empty) System.Console.WriteLine("Такого элемента в массиве не обнаружено");
     else
     {
-        for (int i = 1; i < Indexes.Count; i++)
+        for (int i = 0; i < res.Length; i++)
         {
-            System.Console.WriteLine($"Позиции указанного числа в массиве {Indexes[i]}");
+            System.Console.Write($"Позиции указанного числа в массиве {res[i]}");
         }
     }
 }
