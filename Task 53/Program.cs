@@ -2,8 +2,6 @@
 
 int x = 0, y = 0;
 double a = 0;
-//string resul = string.Empty;
-//string r = string.Empty;
 
 Input(out x, out y);
 double [,] matrix = new double[x,y];
@@ -14,8 +12,6 @@ System.Console.WriteLine("Введите число, позиции которо
 a = Convert.ToDouble(Console.ReadLine());
 
 PrintResults(FindElement(matrix, a));
-
-
 
 
 void Input (out int m, out int n)
@@ -77,9 +73,11 @@ void PrintResults(string res)
     if(res == string.Empty) System.Console.WriteLine("Такого элемента в массиве не обнаружено");
     else
     {
+        System.Console.WriteLine("Позиции указанного числа в массиве");
         for (int i = 0; i < res.Length; i++)
         {
-            System.Console.Write($"Позиции указанного числа в массиве {res[i]}");
+            System.Console.Write($"{res[i]} ");
+            if(i !=0 && i %2 !=0) System.Console.WriteLine();
         }
     }
 }
