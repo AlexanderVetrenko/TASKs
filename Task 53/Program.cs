@@ -35,7 +35,7 @@ void FillArray(double[,] arr, int a, int b)
         for (int j = 0; j < b; j++)
         {
             c = Convert.ToDouble(new Random().Next(1,40));
-            arr[i,j]=Math.Round(c/4,2);
+            arr[i,j]=Math.Round(c/3,2);
         }
     }
 }

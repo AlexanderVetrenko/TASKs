@@ -4,7 +4,6 @@ int x = 0, y = 0;
 
 Input(out x, out y);
 int[,] matrix = new int[x, y];
-double[] massiv = new double[y];
 FillArray(matrix, x, y);
 PrintArray(matrix);
 System.Console.WriteLine("Среднее арифметическое каждого столбца:");

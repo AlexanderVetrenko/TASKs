@@ -3,13 +3,13 @@
 int x = 0, y = 0;
 
 Input(out x, out y);
-int [,] matrix = new int[x,y];
+int[,] matrix = new int[x, y];
 PrintArray(matrix, x, y);
-FillArray(matrix, x,y);
+FillArray(matrix, x, y);
 System.Console.WriteLine();
-PrintArray(matrix, x,y);
+PrintArray(matrix, x, y);
 
-void Input (out int m, out int n)
+void Input(out int m, out int n)
 {
     string s = string.Empty;
 
@@ -22,13 +22,13 @@ void Input (out int m, out int n)
     n = Convert.ToInt32(s);
 }
 
-void PrintArray (int[,] arr, int a, int b)
+void PrintArray(int[,] arr, int a, int b)
 {
     for (int i = 0; i < a; i++)
     {
         for (int j = 0; j < b; j++)
         {
-            System.Console.Write($"{arr[i,j]} ");
+            System.Console.Write($"{arr[i, j],3} |");
         }
         System.Console.WriteLine();
     }
@@ -40,7 +40,7 @@ void FillArray(int[,] arr, int a, int b)
     {
         for (int j = 0; j < b; j++)
         {
-            arr[i,j]=new Random().Next(1,100);
+            arr[i, j] = new Random().Next(1, 100);
         }
     }
 }
