@@ -4,11 +4,11 @@
 int x = 0, y = 0;
 
 Input(out x, out y);
-double [,] matrix = new int[x, y];
+double[,] matrix = new double[x, y];
 FillArray(matrix, x, y);
 PrintArray(matrix);
 System.Console.WriteLine("Массив после упорядочивания строк по убыванию:");
-//ExchangeElemnts(matrix, y);
+SortElemnts(matrix);
 PrintArray(matrix);
 
 
@@ -48,12 +48,18 @@ void PrintArray(double[,] arr)
 }
 void SortElemnts(double[,] arr)
 {
-    double min = arr[0,0];
+    double min = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
+        for (int j = 0; j < arr.GetLength(1) + 1; j++)
         {
-            if (arr[i,j] > min) 
+            if (arr[i, j] < arr[i, j + 1])
+            {
+                min = arr[i, j];
+                arr[i, j] = arr[i, j + 1];
+                arr[i, j + 1] = min;
+                min = 0;
+            }
         }
     }
 }
