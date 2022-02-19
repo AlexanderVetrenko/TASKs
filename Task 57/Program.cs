@@ -51,7 +51,7 @@ void SortElemnts(double[,] arr)
     double min = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < arr.GetLength(1) + 1; j++)
+        for (int j = 0; j < arr.GetLength(1) - 1; j++)
         {
             if (arr[i, j] < arr[i, j + 1])
             {
