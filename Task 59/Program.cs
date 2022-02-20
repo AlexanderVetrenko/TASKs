@@ -16,12 +16,12 @@ void Input(out int m, out int n)
     System.Console.Write("Введите количество строк массива: ");
     m = Convert.ToInt32(Console.ReadLine());
 
-    System.Console.Write("Введите количество столбцов массива (оно должно быть равно количеству строк): ");
+    System.Console.Write("Введите количество столбцов массива (оно должно отличаться от количества строк): ");
     n = Convert.ToInt32(Console.ReadLine());
-    while (m != n)
+    while (m == n)
     {
-        System.Console.WriteLine("Количество строк должно быть равно количеству столбцов,"
-                                           + " иначе условие задачи не выплняется!");
+        System.Console.WriteLine("Количество строк должно отличаться от количества столбцов,"
+                                           + " иначе условие задачи не выполняется!");
         Input(out m, out n);
     }
 
