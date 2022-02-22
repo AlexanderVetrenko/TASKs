@@ -1,26 +1,26 @@
 ﻿// Найти сумму цифр числа
 
-int x = 0;
+int x;
 
 Input(out x);
-PrintResult(x, Solve(x, y));
+PrintResult(x, NumbrsSum(x));
 
 void Input (out int n)
 {
-    System.Console.WriteLine("Введите число  ");
-    n = Convert.ToInt32(Console.ReadLine());
+    System.Console.WriteLine("Введите целое число  ");
+    n = Math.Abs(Convert.ToInt32(Console.ReadLine()));
     
 }
 
-int Solve(int a)
+int NumbrsSum(int a)
 {   
-    if (a==b) return b;
-    else return a + Solve(a+1, b);
+    if (a/10 == 0) return a;
+    else return a%10 + NumbrsSum(a/10);
 }
 
-void PrintResult(int a, int b, int d)
+void PrintResult(int a, int b)
 {
-    System.Console.WriteLine("Сумма элементов от " + a + " до " + b + " равна " + d);
+    System.Console.WriteLine($"Сумма цифр числа {a} равна {b}.");
 }
 
 
