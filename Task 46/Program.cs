@@ -4,7 +4,6 @@ struct Point
 {
     // ООП - инкапсуляция
     public int x, y; // поля
-    public string name;
     public void Print()
     {
         System.Console.WriteLine($"x = {x} y = {y}");
@@ -40,12 +39,12 @@ class Program
     }
     static void Main()
     {
-        Point[] points = new Point[2];
+        /* Point[] points = new Point[2];
         points[0].x = 0;
         points[0].y = 2;
         points[1].x = 3;
         points[1].y = 4;
-        Mashtab(2, points);
+        Mashtab(2, points);// - это вариант с использованием массива */
         
         //int x = 1, y = 2, m = 0, s = 0;
         //Calc(x, y, out m, out s);
