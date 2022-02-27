@@ -18,7 +18,6 @@ void Input(out double n, out int m)
 double Grade(double a, int b)
 {
     if (b == 0) return 1;
-    if (b == 1) return a;
     else return a * Grade(a, b - 1);
 }
 
