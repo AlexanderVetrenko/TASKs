@@ -35,6 +35,7 @@ void PrintArray(int[,] arr, int a, int b)
 }
 
 void FillArray(int[,] arr, int a, int b)
+
 {
     for (int i = 0; i < a; i++)
     {
