@@ -3,16 +3,17 @@
 struct Point
 {
     // ООП - инкапсуляция
-    public int x, y; // поля
+    public double x, y; // поля
+    public string name = String.Empty;
     public void Print()
     {
-        System.Console.WriteLine($"x = {x} y = {y}");
+        System.Console.WriteLine($"Вершина {name}, x = {x} y = {y}");
     }
 }
 
 class Program
 {
-    static void Masht(int k, ref Point a, ref Point b, ref Point c) // передача по значению, а нужно реализовать по ссылке (при помощи ref)
+    static void Masht(double k, ref Point a, ref Point b, ref Point c, ref Point d) // передача по значению, а нужно реализовать по ссылке (при помощи ref)
     // массивы, в отличие от переменных, сразу передаются по ссылке
     {
         a.x = a.x * k;
@@ -21,9 +22,11 @@ class Program
         b.y = b.y * k;
         c.x = c.x * k;
         c.y = c.y * k;
+        d.x = d.x * k;
+        d.y = d.y * k;
     }
 
-    static void Mashtab(int k, Point[] arr)
+    /* static void Mashtab(int k, Point[] arr)
     {
         for (int i = 0; i < arr.Length; i++)
         {
@@ -36,6 +39,11 @@ class Program
     {
         multi = a * b;
         sum = a + b;
+    } */
+    static void Input (out double z)
+    {
+        System.Console.WriteLine("Введите коэффициент масштабирования: ");
+        z=double.Parse(Console.ReadLine());
     }
     static void Main()
     {
@@ -48,20 +56,34 @@ class Program
         
         //int x = 1, y = 2, m = 0, s = 0;
         //Calc(x, y, out m, out s);
-
-        Point a, b, c;
+        double s;
+        Point a, b, c, d;
         a.x = 0;
         a.y = 2;
+        a.name = "a";
         b.x = 1;
         b.y = 3;
-        c.x = 2; c.y = 4;
+        b.name = "b";
+        c.x = 2;
+        c.y = 4;
+        c.name = "c";
+        d.x = 5;
+        d.y = 3;
+        d.name = "d";
+        System.Console.WriteLine("Координаты вершин фигуры до масштабирования:");
         a.Print();
         b.Print();
         c.Print();
-        Masht(2, ref a, ref b, ref c);
+        d.Print();
+        Input(out s);
+        Masht(s, ref a, ref b, ref c, ref d);
+        System.Console.WriteLine();
+        System.Console.WriteLine($"Координаты вершины фигуры после масштабирования с коэффициентом к = {s}:");
+        System.Console.WriteLine();
         a.Print();
         b.Print();
         c.Print();
+        d.Print();
     }
 }
 
