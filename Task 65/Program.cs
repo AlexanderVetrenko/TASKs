@@ -1,77 +1,72 @@
 ﻿// Спирально заполнить двумерный массив
 
 int x = 0, y = 0;
+int m = 0, n = 0;
+int k = 1;
 
 Input(out x, out y);
 int[,] matrix = new int[x, y];
-/* PrintArray(matrix, x, y);
-FillArray(matrix, x, y);
-System.Console.WriteLine();*/
-PrintArray(matrix, x, y);
+m = (Math.Min(matrix.GetLength(0), matrix.GetLength(1))) / 2;
+SpiralArray(matrix, m, n, k);
+System.Console.WriteLine();
+PrintArray(matrix);
 
-int m = 0, n = 0;
-m = matrix.GetLength(0)/2;
 
-while (n != m)
+void SpiralArray(int[,] arr, int t, int l, int s) // t соответствует m, l соответствует n, s соответствует k
+//                  matrix       m      n      k
 {
-    int i = n;
-    int k = 1;
-    int j = 0;
-    for (j = 0; j < matrix.GetLength(1) - n; j++)
+    int i, j;
+    while (l <= t)
     {
-        matrix[i, j] = k++;
-    }
-    j = matrix.GetLength(1) - 1 - n;
-    for (i = n + 1; i < matrix.GetLength(0) - 1 - n; i++)
-    {
-        matrix[i, j] = k++;
-    }
-    i = matrix.GetLength(0) - 1 - n;
-    for (j = matrix.GetLength(1) - 2 - n; j < 1 + n; j--)
-    {
-        matrix[i, j] = k++;
-    }
-    n++;
-    j = n - 1;
-    for (i = matrix.GetLength(0) - 1 - n; i < 1 + n; i--)
-    {
-        matrix[i, j] = k++;
+        i = l;
+        for (j = l; j < (arr.GetLength(1) - l); j++)
+        {
+            arr[i, j] = s++;
+        }
+        j = (arr.GetLength(1) - 1 - l);
+        for (i = (l + 1); i < (arr.GetLength(0) - l); i++)
+        {
+            arr[i, j] = s++;
+        }
+
+        i = (arr.GetLength(0) - 1 - l);
+        for (j = (arr.GetLength(1) - 2 - l); j >= l; j--)
+        {
+            arr[i, j] = s++;
+        }
+        l++;
+        j = (l - 1);
+        for (i = (arr.GetLength(0) - 1 - l); i >= l; i--)
+        {
+            arr[i, j] = s++;
+        }
     }
 }
 
 void Input(out int m, out int n)
 {
-    string s = string.Empty;
-
     System.Console.Write("Введите количество строк массива ");
-    s = Console.ReadLine();
-    m = Convert.ToInt32(s);
+    m = int.Parse(Console.ReadLine());
 
     System.Console.Write("Введите количество столбцов массива ");
-    s = Console.ReadLine();
-    n = Convert.ToInt32(s);
+    n = int.Parse(Console.ReadLine());
+
+    while (m!=n)
+    {
+        System.Console.WriteLine("Количество строк должно быть равно количеству столбцов!");
+        Input(out m, out n);
+    }
+
 }
 
-void PrintArray(int[,] arr, int a, int b)
+void PrintArray(int[,] arr)
 {
-    for (int i = 0; i < a; i++)
+    for (int i = 0; i < arr.GetLength(0); i++)
     {
-        for (int j = 0; j < b; j++)
+        for (int j = 0; j < arr.GetLength(1); j++)
         {
             System.Console.Write($"{arr[i, j],3} |");
         }
         System.Console.WriteLine();
     }
 }
-
-/*void FillArray(int[,] arr, int a, int b)
-
-{
-    for (int i = 0; i < a; i++)
-    {
-        for (int j = 0; j < b; j++)
-        {
-            arr[i, j] = new Random().Next(1, 100);
-        }
-    }
-} */
